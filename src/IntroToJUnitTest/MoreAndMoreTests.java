@@ -18,7 +18,7 @@ public class MoreAndMoreTests {
 	    assertEquals("8 x 11 = 88", multiply(8, 11));
 	  }
 
-	@Test
+  @Test
 	  public void PrimeTest() {
 
 	    assertTrue(isPrime(3));
@@ -29,32 +29,22 @@ public class MoreAndMoreTests {
 	    assertFalse(isPrime(527));
 
 	  }
-private boolean isPrime(int i) {
-	for (int j = 2; j <i-1; j++) {
-		if (i%j==0) {
-			
-		}
-		
-	}
-	return false;
-	
-	
-}
-//
-//	@Test
-//	  public void SquareTest() {
-//
-//	    assertTrue(isSquare(4));
-//	    assertTrue(isSquare(144));
-//	    assertTrue(isSquare(64));
-//	    assertTrue(isSquare(10201));
-//	    assertTrue(isSquare(1));
-//	    assertFalse(isSquare(3));
-//	    assertFalse(isSquare(22));
-//	    assertFalse(isSquare(143));
-//
-//	  }
-//
+
+
+	@Test
+	  public void SquareTest() {
+
+	    assertTrue(isSquare(4));
+	    assertTrue(isSquare(144));
+	    assertTrue(isSquare(64));
+	    assertTrue(isSquare(10201));
+	    assertTrue(isSquare(1));
+	    assertFalse(isSquare(3));
+	    assertFalse(isSquare(22));
+	    assertFalse(isSquare(143));
+
+	  }
+
 //	@Test
 //	  public void CubeTest() {
 //
@@ -68,12 +58,32 @@ private boolean isPrime(int i) {
 //
 //	  }
 
+	private boolean isSquare(int i) {
+	
+		for (int j = 0; j <i-1; j++) {
+			if (Math.pow(i, 1/2)>0) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	private String multiply(int i, int j) {
 		return i + " x " + j + " = "  + i*j;
 		
 		
 	}
 
+	private boolean isPrime(int i) {
+		
+		for (int j = 2; j <i-1; j++) {
+			if (i%j==0) {
+				return false;
+			}
+			}
+		return true;
 
+
+	}
 
 }
