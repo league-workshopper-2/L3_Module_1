@@ -81,7 +81,7 @@ for (int i = 0; i < oysters.size(); i++) {
 
 	public static List<String> sortDNA(List<String> unsortedSequences) {
 		for (int i = 0; i < unsortedSequences.size(); i++) {
-			for (int j = i=1; j < unsortedSequences.size(); j++) {
+			for (int j = i+1; j < unsortedSequences.size(); j++) {
 				if (unsortedSequences.get(i).length()>unsortedSequences.get(j).length()) {
 					String t = unsortedSequences.get(i);
 					unsortedSequences.set(i, unsortedSequences.get(j));
@@ -97,13 +97,14 @@ for (int i = 0; i < oysters.size(); i++) {
 	public static List<String> sortWords(List<String> words) {
 		for (int i = 0; i < words.size(); i++) {
 			for (int j = i+1; j < words.size(); j++) {
-				if (words.get(i).length()>words.get(j).length()) {
+				if (words.get(i).compareTo(words.get(j))>0) {
 					String t = words.get(i);
 					words.set(i, words.get(j));
 					words.set(j, t);
 					return words;
 				}
-			}
+				}
+			
 		}
 		return null;
 	}		
